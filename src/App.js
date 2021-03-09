@@ -1,10 +1,40 @@
-
+import React from 'react';
 import './App.css';
+import Home from './components/Home/Home';
+import NoMatch from './components/NoMatch/NoMatch';
+import TeamDetail from './components/TeamDetail/TeamDetail';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+
 
 function App() {
+
   return (
-    <div>
-      <h1>This is react router project</h1>
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+
+          <Route exact path="/">
+            <Home/>
+          </Route>
+
+          <Route path="*">
+            <NoMatch/>
+          </Route>
+
+          <Route path="/team/:id">
+            <TeamDetail></TeamDetail>
+          </Route>
+
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -1,0 +1,20 @@
+.bg-image {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+.bg-image img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    opacity: 0.5;
+}
+.centered {
+    font-size: 30px;
+    font-family: 'Noto Sans JP', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
