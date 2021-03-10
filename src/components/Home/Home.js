@@ -9,7 +9,7 @@ const Home = () => {
     useEffect(() => {
       fetch('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League')
       .then ( res => res.json())
-      .then (data => setTeams(data.teams.slice(0,9))
+      .then (data => setTeams(data.teams.slice(0,12))
       )
     },[])
     console.log(teams);

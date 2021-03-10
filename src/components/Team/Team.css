@@ -1,0 +1,17 @@
+.box{
+    margin: 10px;
+}
+.grid {
+    display: grid;
+    /* grid-template: repeat(3, 1fr);
+    min-height: 100%;
+    max-width: 33%; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+  }
+  
+  .grid > div {
+    flex-basis: calc(33.33333333% - 40px);
+  }
