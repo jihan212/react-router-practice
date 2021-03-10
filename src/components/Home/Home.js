@@ -12,12 +12,13 @@ const Home = () => {
       .then (data => setTeams(data.teams.slice(0,9))
       )
     },[])
-    
+    console.log(teams);
     return (
     <div className="Home">
         <div className="bg-image"><img src={bgImage} alt=""/>
-            <div className="centered"> <h1>Team</h1> </div>
+            <div className="centered"> <h1> Team Viewer </h1> </div>
         </div>
+        <br/>
      {
        teams.map ( team => <Team team = {team}></Team> )
      }

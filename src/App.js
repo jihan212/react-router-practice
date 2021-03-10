@@ -25,12 +25,12 @@ function App() {
             <Home/>
           </Route>
 
-          <Route path="*">
-            <NoMatch/>
-          </Route>
-
           <Route path="/team/:id">
             <TeamDetail></TeamDetail>
+          </Route>
+
+          <Route path="*">
+            <NoMatch/>
           </Route>
 
         </Switch>

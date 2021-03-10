@@ -9,7 +9,7 @@ import './Team.css'
 
 
 const Team = (props) => {
-    const { idLeague,strTeam, strTeamBadge } = props.team;
+    const { idTeam,strTeam, strTeamBadge, strSport } = props.team;
     
     return (
         <div className="team"> 
@@ -21,10 +21,11 @@ const Team = (props) => {
                         <Card.Body>
                             <Card.Title>{strTeam}</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            Sport Type: {strSport}
                             </Card.Text>
+                            <Link to= {"/team/"+idTeam}>
                             <Button variant="primary">Go somewhere</Button>
+                            </Link>
                         </Card.Body>
                         </Card>
                     </Col>
