@@ -19,9 +19,11 @@ const Home = () => {
             <div className="centered"> <h1> Team Viewer </h1> </div>
         </div>
         <br/>
-     {
-       teams.map ( team => <Team team = {team}></Team> )
-     }
+        <div className="teams">
+            {
+              teams.map ( team => <Team team = {team}></Team> )
+            }
+        </div>
     </div>
     );
 };

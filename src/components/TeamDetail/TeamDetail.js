@@ -14,10 +14,11 @@ const TeamDetail = () => {
         .then (data => setTeam(data.teams))
     },[id])
     console.log(team);
+    console.log(team.strTeam);
     return (
         <div>
-            <div className="bg-image"><img src={bgImage} alt=""/>
-            <div className="centered"> <h1> Team Viewer </h1> </div>
+            <div className="banner"><img src={bgImage} alt=""/>
+            <div className="logo"> <h1> Team Details </h1> </div>
             </div>
 <br/>
             <div className="team-details">

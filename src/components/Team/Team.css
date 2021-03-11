@@ -1,17 +1,25 @@
+.team{
+  background-color: rgb(25, 65, 25);
+  margin-left: auto;
+  margin-right: auto;
+}
 .box{
-    margin: 10px;
+    display: block;
+    margin: 5px auto;
+}
+.box img {
+  width:70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .grid {
     display: grid;
-    /* grid-template: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     min-height: 100%;
-    max-width: 33%; */
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    width: 33%;
+    border: none;
+    float: left;
     overflow: hidden;
-  }
-  
-  .grid > div {
-    flex-basis: calc(33.33333333% - 40px);
+    margin-bottom: 5px;
   }
