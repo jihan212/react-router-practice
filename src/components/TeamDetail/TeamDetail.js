@@ -37,7 +37,7 @@ const TeamDetail = () => {
             </div>
             <div className="image">
             {
-                team.strGender=== 'Male '? <img src={femaleImg}/>:<img src={maleImg}/>
+                team.strGender=== 'Male '? <img src={femaleImg} alt=""/>:<img src={maleImg} alt=""/>
             }
             </div>
             </div>
