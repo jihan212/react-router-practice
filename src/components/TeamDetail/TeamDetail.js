@@ -23,7 +23,7 @@ const TeamDetail = () => {
     return (
         <div>
             <div className="banner"><img src={team.strTeamBanner} alt=""/>
-            {/* <div className="logo"> <img src={team.strTeamLogo} alt=""/> </div> */}
+            <div className="logo"> <img src={team.strTeamLogo} alt=""/> </div>
             </div>
 <br/>
             <div className="team-details">
