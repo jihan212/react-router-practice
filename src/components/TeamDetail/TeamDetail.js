@@ -1,8 +1,15 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router';
-import bgImage from '../../images/bg.jpg';
+import maleImg from '../../images/male.png';
+import femaleImg from '../../images/female.png';
+import facebookImg from '../../images/Facebook.png';
+import youtubeImg from '../../images/YouTube.png';
+import twitterImg from '../../images/Twitter.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFlag, faFutbol, faMars, faMonument } from '@fortawesome/free-solid-svg-icons'
 import './TeamDetail.css';
+import { Link } from 'react-router-dom';
 
 const TeamDetail = () => {
     const {id} = useParams();
@@ -11,24 +18,44 @@ const TeamDetail = () => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${id}`
         fetch (url)
         .then (res => res.json())
-        .then (data => setTeam(data.teams))
+        .then (data => setTeam(data.teams[0]))
     },[id])
-    console.log(team);
-    console.log(team.strTeam);
     return (
         <div>
-            <div className="banner"><img src={bgImage} alt=""/>
-            <div className="logo"> <h1> Team Details </h1> </div>
+            <div className="banner"><img src={team.strTeamBanner} alt=""/>
+            {/* <div className="logo"> <img src={team.strTeamLogo} alt=""/> </div> */}
             </div>
 <br/>
             <div className="team-details">
-            <h1>This is about team Detail id : {id}</h1>
-            <h2> Name : {team.strTeam} </h2>
-            <h3>Sport Type : {team.strSport} </h3>
+            <div className="details">
+            <h2>{team.strTeam} </h2>
+            <br/>
+            <h6> <FontAwesomeIcon icon={faMonument} /> Founded : {team.intFormedYear} </h6>
+            <h6> <FontAwesomeIcon icon={faFlag} />  Country : {team.strCountry}</h6>
+            <h6> <FontAwesomeIcon icon={faFutbol} /> Sport Type : {team.strSport} </h6>
+            <h6> <FontAwesomeIcon icon={faMars} /> Gender : {team.strGender} </h6>
+            </div>
+            <div className="image">
+            {
+                team.strGender=== 'Male '? <img src={femaleImg}/>:<img src={maleImg}/>
+            }
+            </div>
             </div>
 <br/>
             <div className="team-paragraph">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ullam deleniti vel numquam fuga! Nulla, consectetur quasi. Ab sit officiis labore facere quas quod nobis! Nam tempora autem recusandae assumenda, placeat at. Voluptas harum id, voluptatum ex unde labore, eius facilis similique quibusdam error facere praesentium dolorem odio exercitationem. Sit amet repellendus, culpa cum deleniti est fugiat consequuntur ab neque, libero voluptas nihil nisi rem fuga explicabo! Natus voluptate beatae odit eveniet recusandae tenetur voluptates, nam reiciendis dolores, nemo dicta harum facilis, vero ut quos dolorem quo at! Nemo enim quia nobis? Nam, cumque. Quas dolorem numquam neque officia doloremque.</p>
+                <p>{team.strDescriptionEN}</p>
+            </div>
+<br/>
+            <div className="social-link">
+                <Link to = {team.strFacebook}>
+                <img src={facebookImg} alt=""/>
+                </Link>
+                <Link to ={team.strYoutube}>
+                <img src={youtubeImg} alt=""/>
+                </Link>
+                <Link to={team.strTwitter}>
+                <img src={twitterImg} alt=""/>
+                </Link>
             </div>
         </div>
     );

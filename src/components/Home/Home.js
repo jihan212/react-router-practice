@@ -9,14 +9,14 @@ const Home = () => {
     useEffect(() => {
       fetch('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League')
       .then ( res => res.json())
-      .then (data => setTeams(data.teams.slice(0,12))
+      .then (data => setTeams(data.teams.slice(0,30))
       )
     },[])
     console.log(teams);
     return (
     <div className="Home">
         <div className="bg-image"><img src={bgImage} alt=""/>
-            <div className="centered"> <h1> Team Viewer </h1> </div>
+            <div className="centered">  World Soccer Teams </div>
         </div>
         <br/>
         <div className="teams">
