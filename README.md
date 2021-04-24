@@ -1,6 +1,3 @@
-# react router app
-
-# sport team viewer app 
 
 # world soccer teams app
 
